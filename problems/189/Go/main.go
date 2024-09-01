@@ -12,4 +12,11 @@ func main() {
 
 func rotate(nums []int, k int) {
     fmt.Println(nums, k)
+    nums2 := make([]int, len(nums))
+    copy(nums2, nums)
+    for id, val := range nums2 {
+        fmt.Println((id+k) % len(nums))
+        nums[(id+k) % len(nums)] = val
+    }
+    fmt.Println(nums)
 }
